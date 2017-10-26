@@ -1,8 +1,3 @@
-//Jonah Moon and April Shin
-//CSIS 137 Wed Night Class
-//Midterm Project
-//Step 2
-
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -17,9 +12,9 @@ const int Date::days[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
 ostream& operator<<(ostream &output, const Date &d)
 {
 	/*static string monthName[13] = { "", "January", "February",
-		"March", "April", "May",
-		"June", "July", "August",
-		"September", "October", "November", "December" }; */
+	"March", "April", "May",
+	"June", "July", "August",
+	"September", "October", "November", "December" }; */
 
 	output << /*monthName[*/d.month/*]*/ << "/" << d.day << "/" << d.year;
 
@@ -147,16 +142,15 @@ void Date::helpIncrement()
 	}
 }
 
-/*  Need the TIME_H to complete below:
-
+// comparing the time of two Date instances
 bool Date::operator==(const Date& d) const
 {
-
+	return (*this == d);
 }
 
 bool Date::operator!=(const Date& d) const
 {
-
+	return !(*this == d);
 }
 
 bool Date::operator<(const Date& d) const
@@ -178,5 +172,3 @@ bool Date::operator>=(const Date& number) const
 {
 
 }
-
-*/
