@@ -37,7 +37,30 @@ Date::Date(int m, int d, int y)
 {
 	setDate(m, d, y);  //don't repeat code
 }
-
+int Date::getDay() const
+{
+	return day;
+}
+int Date::getMonth() const
+{
+	return month;
+}
+int Date::getYear() const
+{
+	return year;
+}
+void Date::setDay(int d)
+{
+	day = d;
+}
+void Date::setMonth(int m)
+{
+	month = m;
+}
+void Date::setYear(int y)
+{
+	year = y;
+} 
 void Date::setDate(int mm, int dd, int yy)
 {
 	month = (mm >= 1 && mm <= 12) ? mm : 1;
