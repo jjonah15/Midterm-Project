@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstdlib>
 using namespace std;
 
 
@@ -113,20 +114,9 @@ void Time::printStandard()const  //must be const since prototype is const
 }
 double Time::operator-(const Time& arg) const
 {
-	double hour,minute,difference;
-	string diff;
-	if (this->hour > arg.hour)
-	{
-		hour = this->hour - arg.hour;
-		minute = this->minute - arg.hour;
-	}
-	else
-	{
-		hour = arg.hour - this->hour;
-		minute = arg.minute - this->minute;
-	}
-	difference = hour + (minute / 60);
-	return difference;
+
+	
+	return abs( (hour - arg.hour +double(minute - arg.minute)/60));
 	
 }
 Time::~Time()
