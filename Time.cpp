@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+
 #include "Time.h"
 
 ostream& operator<<(ostream& output, const Time& arg)
@@ -110,7 +111,7 @@ void Time::printStandard()const  //must be const since prototype is const
      cout << ((hour == 0 || hour == 12) ? 12 : hour % 12) << ":" 
           << setfill ('0') << setw(2) << minute << (hour < 12 ? "AM" : "PM" )<< endl;
 }
-double Time::operator-(const Time& arg)
+double Time::operator-(const Time& arg) const
 {
 	double hour,minute,difference;
 	string diff;

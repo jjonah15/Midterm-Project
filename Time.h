@@ -29,7 +29,7 @@ class Time
              void printUniversal() const;
              void printStandard()const;
 
-			 double operator-(const Time&);
+			 double operator-(const Time&)const;
 };
 
 #endif
