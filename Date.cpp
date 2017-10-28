@@ -178,20 +178,95 @@ bool Date::operator!=(const Date& d) const
 
 bool Date::operator<(const Date& d) const
 {
+	if (clock.getHour() < d.clock.getHour())
+	{
+		return true;
+	}
 
+	else if (clock.getHour() == d.clock.getHour())
+	{
+		if (clock.getMinute() < d.clock.getMinute())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 }
 
 bool Date::operator>(const Date& d) const
 {
+	if (clock.getHour() > d.clock.getHour())
+	{
+		return true;
+	}
+	else if (clock.getHour() == d.clock.getHour())
+	{
+		if (clock.getMinute() > d.clock.getMinute())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 
 }
+
 
 bool Date::operator<=(const Date& d) const
 {
-
+	if (clock.getHour() <= d.clock.getHour())
+	{
+		return true;
+	}
+	if (clock.getHour() == d.clock.getHour())
+	{
+		if (clock.getMinute() <= d.clock.getMinute())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 }
 
-bool Date::operator>=(const Date& number) const
+bool Date::operator>=(const Date& d) const
 {
-
+	if (clock.getHour() >= d.clock.getHour())
+	{
+		return true;
+	}
+	if (clock.getHour() == d.clock.getHour())
+	{
+		if (clock.getMinute() >= d.clock.getMinute())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 }

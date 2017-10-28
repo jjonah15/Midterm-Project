@@ -6,6 +6,7 @@
 #ifndef DATE_H
 #define DATE_H
 #include <iostream>
+#include "Time.h"
 using namespace std;
 
 class Date
@@ -18,7 +19,7 @@ private:
 	int month;
 	int day;
 	int year;
-
+	Time clock;
 	static const int days[];  //static array member to hold # of days in each month
 
 	void helpIncrement();  //private utility function for incrementing the date
@@ -32,11 +33,17 @@ public:
 	const Date& operator+=(int);  //to increment date by multiple days
 	static bool leapYear(int);  //to determine if date is a leap year - static
 	bool endOfMonth(int)const;  //is date the end of the month (need to know for incrementing)
-	/*bool operator==(const Date&) const;
+	int getDay() const;
+	int getMonth() const;
+	int getYear() const;
+	void setDay(int);
+	void setMonth(int);
+	void setYear(int);
+	bool operator==(const Date&) const;
 	bool operator!=(const Date&) const;
 	bool operator<(const Date&) const;
 	bool operator>(const Date&) const;
 	bool operator<=(const Date&) const;
-	bool operator>=(const Date&) const; */
+	bool operator>=(const Date&) const; 
 };
 #endif

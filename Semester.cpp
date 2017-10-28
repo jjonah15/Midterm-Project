@@ -3,6 +3,8 @@
 //Midterm Project
 //Step 4
 
+//made edit added get and set for member
+
 #include "Semester.h"
 #include <string>
 #include <iostream>
@@ -39,4 +41,23 @@ void Semester::setSemesterName(string name)
 string Semester::getSemesterName() const
 {
 	return semesterName;
+}
+void Semester::setStartDate(Date sDate)
+{
+	startDate = sDate;
+}
+Date& Semester::getStartDate() const
+{
+	Date* ptr = new Date(startDate);
+	return *ptr;
+}
+
+void Semester::setEndDate(Date eDate)
+{
+	endDate = eDate;
+}
+Date& Semester::getEndDate() const
+{
+	Date* ptr = new Date(endDate);
+	return *ptr;
 }

@@ -20,8 +20,12 @@ class Semester
 		Date endDate;
 
 	public:
-		Semester(string, Date, Date);
+		Semester(string = "", Date = Date() , Date = Date());
 		void setSemesterName(string);
 		string getSemesterName() const;
+		void setStartDate(Date);
+		Date& getStartDate() const;
+		void setEndDate(Date);
+		Date& getEndDate() const;
 
 };

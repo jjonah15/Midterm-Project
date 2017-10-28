@@ -1,7 +1,8 @@
 //Time Class Definition with const member functions
 #ifndef TIME_H
 #define TIME_H
-
+#include <iostream>
+using namespace std;
 class Time
 {
 	  friend ostream& operator<<(ostream&, const Time&);
