@@ -7,11 +7,11 @@ using namespace std;
 
 ostream& operator<<(ostream& output,const Course& arg)
 {
-	output << "Course Info:     " << arg.courseNum << "--" << arg.courseName << endl
-		<< "# of Units:  " << arg.units << endl << "Course Dates:      " << arg.startDate << " - "
-		<< arg.endDate << endl << "Meeting Days: " << arg.meetDays << endl << "Meeting Time:    "
-		<< arg.startTime << " - " << arg.endTime << endl << "Daily Duration:   "
-		<< arg.endTime - arg.startTime << " hours" << endl;
+	output << "Course Info:       " << arg.getCourseNum() << "--" << arg.getCourseName() << endl
+		<< "# of Units:        " << arg.getUnits() << endl << "Course Dates:      " << arg.startDate << " - "
+		<< arg.endDate << endl << "Meeting Days:      " << arg.meetDays << endl << "Meeting Time:      "
+		<< arg.startTime << " - " << arg.endTime << endl << "Daily Duration:    "
+		<< setprecision(2) << arg.calcDailyDuration() << " hours" << endl;
 	return output;
 }
 Course::Course(string cNum, string cName, string meetD, double numUnits, Date startD, Date endD, Time startT, Time endT)
@@ -36,22 +36,25 @@ double Course::getUnits()const
 {
 	return units;
 }
-void Course::getStartDate()const
+Date& Course::getStartDate()const
 {
-	cout << startDate;
+	Date* ptr = new Date(startDate);
+	return *ptr;
 }
-void Course::getEndDate()const
+Date& Course::getEndDate()const
 {
-	cout << endDate;
+	Date* ptr = new Date(endDate);
+	return *ptr;
 }
-void Course::getStartTime()const
+Time& Course::getStartTime()const
 {
-	this->startTime.printStandard();
+	Time* ptr = new Time(startTime);
+	return *ptr;
 }
-void Course::getEndTime()const
-{
-
-	this->endTime.printStandard();
+Time& Course::getEndTime()const
+{	
+	Time* ptr = new Time(endTime);
+	return *ptr;
 }
 Course& Course::setCourseNum(string cNum)
 {
@@ -91,6 +94,10 @@ void Course::setEndTime(Time eTime)
 {
 	endTime = eTime;
 
+}
+double Course::calcDailyDuration() const
+{
+	return endTime - startTime;
 }
 Course::~Course()
 {

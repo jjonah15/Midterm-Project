@@ -44,8 +44,7 @@ istream& operator>>(istream& input, Time& arg)
 			arg.hour -= 12;
 		}
 	}
-	input.ignore(2);
-
+	input.ignore();
 	return input;
 }
 //Constructor function to initialize private data

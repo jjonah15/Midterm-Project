@@ -25,10 +25,10 @@ class Course
 		string getCourseName()const;
 		string getMeetDays()const;
 		double getUnits()const;
-		void getStartDate()const;
-		void getEndDate()const;
-		void getStartTime()const;
-		void getEndTime()const;
+		Date& getStartDate()const; //no void
+		Date& getEndDate()const;
+		Time& getStartTime()const;
+		Time& getEndTime()const;
 		Course& setCourseNum(string);
 		Course& setCourseName(string);
 		Course& setMeetDays(string);
@@ -37,6 +37,7 @@ class Course
 		void setEndDate(Date);
 		void setStartTime(Time);
 		void setEndTime(Time);
+		double calcDailyDuration()const;
 
 
 };
